@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+    body {
+        background-color: #fff5e6;
+        /* Light orange background */
+    }
+
+    .btn-primary {
+        background-color: #ff8c00;
+        /* Dark orange background */
+        border-color: #ff8c00;
+    }
+
+    .btn-primary:hover {
+        background-color: #ff751a;
+        /* Slightly darker orange on hover */
+        border-color: #ff751a;
+    }
+
+    .btn-secondary {
+        background-color: #ffa500;
+        /* Orange background */
+        border-color: #ffa500;
+    }
+
+    .btn-secondary:hover {
+        background-color: #e59400;
+        /* Slightly darker orange on hover */
+        border-color: #e59400;
+    }
+
+    h1,
+    p {
+        color: #cc5200;
+        /* Dark orange text */
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Welcome to the Companion App</h1>
+    <p>Track your mental health and improve your wellbeing.</p>
+    <a href="/save_answers" class="btn btn-primary m-2">Save Today's Questions</a>
+    <a href="/get_tasks" class="btn btn-secondary m-2">Get Suggested Tasks</a>
+</div>
+{% endblock %}

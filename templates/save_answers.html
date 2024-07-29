@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="text-center">Save Your Answers</h2>
+        <form method="post" action="/save_answers">
+            <div class="form-group">
+                <label for="feeling_today">How are you feeling today?</label>
+                <select class="form-control" id="feeling_today" name="feeling_today" required>
+                    <option value="Very Happy">Very Happy</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Very Sad">Very Sad</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="stress_anxiety">Did you experience any moments of stress or anxiety today?</label>
+                <select class="form-control" id="stress_anxiety" name="stress_anxiety" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="overall_mood">On a scale of 1 to 10, how would you rate your overall mood today?</label>
+                <input type="range" class="form-control" id="overall_mood" name="overall_mood" min="1" max="10"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="activity_level">How active were you today?</label>
+                <select class="form-control" id="activity_level" name="activity_level" required>
+                    <option value="Very Active">Very Active</option>
+                    <option value="Active">Active</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Inactive">Inactive</option>
+                    <option value="Very Inactive">Very Inactive</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="physical_exercise">Did you engage in any physical exercise today?</label>
+                <select class="form-control" id="physical_exercise" name="physical_exercise" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exercise_duration">If yes, how long did you exercise? (in minutes)</label>
+                <input type="number" class="form-control" id="exercise_duration" name="exercise_duration">
+            </div>
+            <div class="form-group">
+                <label for="social_interactions">Did you interact with friends or family today?</label>
+                <select class="form-control" id="social_interactions" name="social_interactions" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="social_satisfaction">How satisfied were you with your social interactions today?</label>
+                <select class="form-control" id="social_satisfaction" name="social_satisfaction" required>
+                    <option value="Very Satisfied">Very Satisfied</option>
+                    <option value="Satisfied">Satisfied</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Unsatisfied">Unsatisfied</option>
+                    <option value="Very Unsatisfied">Very Unsatisfied</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sleep_hours">How many hours of sleep did you get last night?</label>
+                <input type="number" class="form-control" id="sleep_hours" name="sleep_hours" required>
+            </div>
+            <div class="form-group">
+                <label for="trouble_sleeping">Did you have trouble sleeping last night?</label>
+                <select class="form-control" id="trouble_sleeping" name="trouble_sleeping" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sleep_quality">On a scale of 1 to 10, how would you rate the quality of your sleep?</label>
+                <input type="range" class="form-control" id="sleep_quality" name="sleep_quality" min="1" max="10"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="regular_meals">Did you have regular meals today?</label>
+                <select class="form-control" id="regular_meals" name="regular_meals" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="balanced_diet">Did you consume a balanced diet today?</label>
+                <select class="form-control" id="balanced_diet" name="balanced_diet" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="water_intake">How many glasses of water did you drink today?</label>
+                <input type="number" class="form-control" id="water_intake" name="water_intake" required>
+            </div>
+            <div class="form-group">
+                <label for="relaxation">Did you take time to relax or practice mindfulness today?</label>
+                <select class="form-control" id="relaxation" name="relaxation" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="relaxation_duration">If yes, how long did you spend on relaxation or mindfulness? (in
+                    minutes)</label>
+                <input type="number" class="form-control" id="relaxation_duration" name="relaxation_duration">
+            </div>
+            <div class="form-group">
+                <label for="current_relaxation">On a scale of 1 to 10, how relaxed do you feel right now?</label>
+                <input type="range" class="form-control" id="current_relaxation" name="current_relaxation" min="1"
+                    max="10" required>
+            </div>
+            {% if message %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+            {% endif %}
+            <button type="submit" class="btn btn-primary">Save Answers</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
